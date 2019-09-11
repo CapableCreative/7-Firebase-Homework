@@ -1,0 +1,52 @@
+body {
+    font-size: 20px;
+    font-family: 'Helvetica','Arial',sans-serif;
+    -webkit-font-smooth: always;
+}
+.trainBkgrd{
+    background: url('../img/train.jpg') no-repeat center center;
+    background-size: cover;
+    margin-top: 0px;
+    min-height: 100vh;
+}
+.contained {
+    padding-top: 20px;
+}
+.contained .jumbotron{
+    text-align: center;
+    font-family: 'Oswald','Impact',condensed,sans-serif;
+    padding: 30px 30px 15px 30px;
+    border-left: 15px solid #069;
+    border-top: 0px solid #069;
+    border-right: 15px solid #069;
+    border-radius: 100px 100px 0px 0px;
+    background: rgba(240,235,245,0.9)
+}
+.contained .jumbotron h2{
+    font-size: 4rem;
+    letter-spacing: 10px;
+    font-weight: 500;
+    color: #000;
+    text-transform: uppercase;
+    text-shadow: -2px 2px 0px rgba(255,255,255,0.8); 
+}
+.contained .jumbotron h3{
+    color: #069;
+    letter-spacing: 30px;
+    font-weight: 200;
+}
+
+/* ------------ TRAIN DATA - BEGIN ------------------- */
+.entriesContainer{
+    background: #FFF;
+    padding: 15px;
+    margin: -33px 0px 0px;
+}
+.entriesContainer h4{
+    font-size: .75rem;
+    text-align: center;
+    font-weight: 700;
+    text-transform: uppercase;
+    line-height: .75rem;
+    margin: 0px;
+}
