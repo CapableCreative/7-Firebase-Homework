@@ -17,7 +17,7 @@ III. -- BEGIN WRITING JS
 var today = new Date();
 var headerDate = today.getDay();
 var currentHour = today.getHours();
-var currentMinute = today.getMinutes();
+var currentMinute = today.getMinutes(00);
 var currentTime = currentHour + ":" + currentMinute;
 var dayOfWeek = ["Sunday ","Monday ","Tuesday ","Wednesday ","Thursday ","Friday ","Saturday "];
 displayDay = dayOfWeek[headerDate];
@@ -56,6 +56,10 @@ $("#trainSubmit").on("click", function(){
         $(".freqWrap").append("<p class=\'freqEntry"+i+"\'>");
         $(".freqEntry"+i+"").text(frequency);
     }
+    // Next Departure population
+    // ((current time - original time in minutes) % frequency ) - frequency * -1 --> Time til next train - SLF
+
+
     i++;
 });
 
