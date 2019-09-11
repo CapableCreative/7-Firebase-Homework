@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /*
 I. -- SET UP FIREBASE, JQUERY, BOOTSTRAP, AND LOCAL JS + CSS
     1. Add Firebase Database (previous Clicktest database with new data) - TESTED AND COMPLETE - SLF
@@ -22,6 +23,8 @@ $(".headDate").text(displayDay);
 
 
 
+=======
+>>>>>>> ff05fc0a54f606482f2076e8723fc26f4482cd29
 var firebaseConfig = {
     apiKey: "AIzaSyCv7rL1jYhVy0FyRMhfAmMCpAFe_yyDJuY",
     authDomain: "clicktest-713a3.firebaseapp.com",
@@ -54,6 +57,9 @@ $("#restartButton").on("click",function(){
         clicks:100
     })
 })
+<<<<<<< HEAD
 
 
 console.log(displayDay);
+=======
+>>>>>>> ff05fc0a54f606482f2076e8723fc26f4482cd29
