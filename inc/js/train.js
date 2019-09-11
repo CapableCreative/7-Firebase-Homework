@@ -19,9 +19,6 @@ var dayOfWeek = ["Sunday ","Monday ","Tuesday ","Wednesday ","Thursday ","Friday
 displayDay = dayOfWeek[headerDate];
 $(".headDate").text(displayDay);
 
-
-
-
 var firebaseConfig = {
     apiKey: "AIzaSyCv7rL1jYhVy0FyRMhfAmMCpAFe_yyDJuY",
     authDomain: "clicktest-713a3.firebaseapp.com",
@@ -54,9 +51,3 @@ $("#restartButton").on("click",function(){
         clicks:100
     })
 })
-<<<<<<< HEAD
-
-
-console.log(displayDay);
-=======
->>>>>>> ff05fc0a54f606482f2076e8723fc26f4482cd29
