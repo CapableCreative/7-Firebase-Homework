@@ -13,11 +13,49 @@ III. -- BEGIN WRITING JS
     2. Test setting new data to database
 */
 
+// LINES 17 - 21 POPULATE THE DAY OF THE WEEK INTO THE APP HEADER
 var today = new Date();
 var headerDate = today.getDay();
 var dayOfWeek = ["Sunday ","Monday ","Tuesday ","Wednesday ","Thursday ","Friday ","Saturday "];
 displayDay = dayOfWeek[headerDate];
 $(".headDate").text(displayDay);
+
+let i = 0;
+// THIS JQUERY WILL PUSH INPUT VALUES INTO THE TRAIN SCHEDULE
+$("#trainSubmit").on("click", function(){
+        // Destination data population
+        let destination = $("#destInput").val();
+        if (destination == ""){
+            $(".destWrap").append("<p class=\'destEntry"+i+"\'>");
+            $(".destEntry"+i+"").text("Unnamed City of Doom");
+        }
+        else {
+            $(".destWrap").append("<p class=\'destEntry"+i+"\'>");
+            $(".destEntry"+i+"").text(destination);
+        }
+        // Last Departure data population
+        let lastDeparture = $("#lastInput").val();
+        if (lastDeparture == ""){
+            $(".lastWrap").append("<p class=\'lastEntry"+i+"\'>");
+            $(".lastEntry"+i+"").text("The Day of Your Birth");
+        }
+        else{
+            $(".lastWrap").append("<p class=\'lastEntry"+i+"\'>");
+            $(".lastEntry"+i+"").text(lastDeparture);
+        }
+        // Departure Freqency population
+        let frequency = $("#freqInput").val();
+        if (frequency == ""){
+            $(".freqWrap").append("<p class=\'freqEntry"+i+"\'>");
+            $(".freqEntry"+i+"").text("As One Life Ends");
+        }
+        else{
+            $(".freqWrap").append("<p class=\'freqEntry"+i+"\'>");
+            $(".freqEntry"+i+"").text(frequency);
+        }
+        i++;
+    
+});
 
 var firebaseConfig = {
     apiKey: "AIzaSyCv7rL1jYhVy0FyRMhfAmMCpAFe_yyDJuY",
@@ -32,6 +70,17 @@ var firebaseConfig = {
 
 firebase.initializeApp(firebaseConfig);
 
+
+
+
+
+
+
+
+
+
+
+// THIS IS THE OLDER FIREBASE CODE FOR THE CLICKER APP. MODIFY / UPDATE THIS WITH METODOLOGY FOR THE TRAIN APP - SLF 9/10/19
 var count = 100;
 
 firebase.database().ref().on("value",function(snapshot){
