@@ -16,46 +16,50 @@ III. -- BEGIN WRITING JS
 // LINES 17 - 21 POPULATE THE DAY OF THE WEEK INTO THE APP HEADER
 var today = new Date();
 var headerDate = today.getDay();
+var currentHour = today.getHours();
+var currentMinute = today.getMinutes();
+var currentTime = currentHour + ":" + currentMinute;
 var dayOfWeek = ["Sunday ","Monday ","Tuesday ","Wednesday ","Thursday ","Friday ","Saturday "];
 displayDay = dayOfWeek[headerDate];
 $(".headDate").text(displayDay);
-
+$("#currTime").text(currentTime);
 let i = 0;
 // THIS JQUERY WILL PUSH INPUT VALUES INTO THE TRAIN SCHEDULE
 $("#trainSubmit").on("click", function(){
-        // Destination data population
-        let destination = $("#destInput").val();
-        if (destination == ""){
-            $(".destWrap").append("<p class=\'destEntry"+i+"\'>");
-            $(".destEntry"+i+"").text("Unnamed City of Doom");
-        }
-        else {
-            $(".destWrap").append("<p class=\'destEntry"+i+"\'>");
-            $(".destEntry"+i+"").text(destination);
-        }
-        // Last Departure data population
-        let lastDeparture = $("#lastInput").val();
-        if (lastDeparture == ""){
-            $(".lastWrap").append("<p class=\'lastEntry"+i+"\'>");
-            $(".lastEntry"+i+"").text("The Day of Your Birth");
-        }
-        else{
-            $(".lastWrap").append("<p class=\'lastEntry"+i+"\'>");
-            $(".lastEntry"+i+"").text(lastDeparture);
-        }
-        // Departure Freqency population
-        let frequency = $("#freqInput").val();
-        if (frequency == ""){
-            $(".freqWrap").append("<p class=\'freqEntry"+i+"\'>");
-            $(".freqEntry"+i+"").text("As One Life Ends");
-        }
-        else{
-            $(".freqWrap").append("<p class=\'freqEntry"+i+"\'>");
-            $(".freqEntry"+i+"").text(frequency);
-        }
-        i++;
-    
+    // Destination data population
+    let destination = $("#destInput").val();
+    if (destination == ""){
+        $(".destWrap").append("<p class=\'destEntry"+i+"\'>");
+        $(".destEntry"+i+"").text("Unnamed City of Doom");
+    }
+    else {
+        $(".destWrap").append("<p class=\'destEntry"+i+"\'>");
+        $(".destEntry"+i+"").text(destination);
+    }
+    // Last Departure data population
+    let lastDeparture = $("#lastInput").val();
+    if (lastDeparture == ""){
+        $(".lastWrap").append("<p class=\'lastEntry"+i+"\'>");
+        $(".lastEntry"+i+"").text("The Day of Your Birth");
+    }
+    else{
+        $(".lastWrap").append("<p class=\'lastEntry"+i+"\'>");
+        $(".lastEntry"+i+"").text(lastDeparture);
+    }
+    // Departure Freqency population
+    let frequency = $("#freqInput").val();
+    if (frequency == ""){
+        $(".freqWrap").append("<p class=\'freqEntry"+i+"\'>");
+        $(".freqEntry"+i+"").text("As One Life Ends");
+    }
+    else{
+        $(".freqWrap").append("<p class=\'freqEntry"+i+"\'>");
+        $(".freqEntry"+i+"").text(frequency);
+    }
+    i++;
 });
+
+console.log(currentTime);
 
 var firebaseConfig = {
     apiKey: "AIzaSyCv7rL1jYhVy0FyRMhfAmMCpAFe_yyDJuY",
