@@ -105,3 +105,9 @@ h6{
     box-shadow: none;
     transform: translateY(3px);
 }
+.trainForm input#lastInputHours{
+    margin-right: 0px;
+}
+.trainForm input.time-input{
+    width: 38px;
+}

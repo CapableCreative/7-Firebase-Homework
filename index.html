@@ -20,7 +20,7 @@
                 <div class="row entriesContainer">
                     <div class="col-md-3 destWrap">
                         <h4>Destination</h4>
-                        <p class="destEntry" id="destinationEntry">Tampa Bay, Florida</p>
+                        <p class="destEntry" id="destinationEntry">City, State</p>
                     </div>
                     <div class="col-md-3 lastWrap">
                         <h4>First Departure</h4>
@@ -28,11 +28,11 @@
                     </div>
                     <div class="col-md-3 freqWrap">
                         <h4>Frequency (Minutes)</h4>
-                        <p class="freqEntry" id="frequencyEntry">120</p>
+                        <p class="freqEntry" id="frequencyEntry">In Minutes</p>
                     </div>
                     <div class="col-md-3 nextWrap">
                         <h4>Next Departure Time</h4>
-                        <p class="nextEntry" id="nextDepartureEntry">14:00</p>  
+                        <p class="nextEntry" id="nextDepartureEntry">In Minutes</p>  
                     </div>
                 </div>
                 <form class="trainForm" method="POST">
@@ -41,7 +41,7 @@
                     <label for="destInput">Destination</label>
                     <input id="destInput" text placeholder="City, State">
                     <label for="lastInput">First Departure</label>
-                    <input id="lastInput" text placeholder="24:00 Military Time">
+                    <input id="lastInputHours" class="time-input" text placeholder="" maxlength="2">:<input class="time-input" id="lastInputMinutes" maxlength="2">
                     <label for="freqInput">Departure Frequency</label>
                     <input id="freqInput" text placeholder="In Minutes">
                     <button id="trainSubmit" name="data" type="button" value="Add Train">Add Train +</button>

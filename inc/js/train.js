@@ -30,17 +30,18 @@ $("#trainSubmit").on("click", function(){
     let destination = $("#destInput").val();
     if (destination == ""){
         $(".destWrap").append("<p class=\'destEntry"+i+"\'>");
-        $(".destEntry"+i+"").text("Unnamed City of Doom");
+        $(".destEntry"+i+"").text("Tempt a dev");
     }
     else {
         $(".destWrap").append("<p class=\'destEntry"+i+"\'>");
         $(".destEntry"+i+"").text(destination);
     }
     // Last Departure data population
-    let lastDeparture = $("#lastInput").val();
+    let lastDeparture = $("#lastInputHours").val() + $("#lastInputMinutes").val();
+    let lastDepartureMinutes = ($("#lastInputHours").val() * 60) + $("#lastInputMinutes").val();
     if (lastDeparture == ""){
         $(".lastWrap").append("<p class=\'lastEntry"+i+"\'>");
-        $(".lastEntry"+i+"").text("The Day of Your Birth");
+        $(".lastEntry"+i+"").text("with empty data");
     }
     else{
         $(".lastWrap").append("<p class=\'lastEntry"+i+"\'>");
@@ -50,15 +51,28 @@ $("#trainSubmit").on("click", function(){
     let frequency = $("#freqInput").val();
     if (frequency == ""){
         $(".freqWrap").append("<p class=\'freqEntry"+i+"\'>");
-        $(".freqEntry"+i+"").text("As One Life Ends");
+        $(".freqEntry"+i+"").text("tempt your fate");
     }
     else{
         $(".freqWrap").append("<p class=\'freqEntry"+i+"\'>");
         $(".freqEntry"+i+"").text(frequency);
     }
     // Next Departure population
-    // ((current time - original time in minutes) % frequency ) - frequency * -1 --> Time til next train - SLF
-
+    let currentHourMins = Number(currentHour) * 60 + Number(currentMinute);
+    let frequencyMins = Number(frequency);
+    let nextDepart = ((currentHourMins - lastDepartureMinutes) % frequencyMins) * -1;
+    if (isNaN(nextDepart)){
+        $(".nextWrap").append("<p class=\'nextEntry" + i + "\'>");
+        $(".nextEntry" + i + "").text("and ride on Styx");
+    }    
+    else {
+        $(".nextWrap").append("<p class=\'nextEntry"+i+"\'>");
+        $(".nextEntry"+i+"").text(nextDepart + " Minutes");
+    }
+    console.log("Current Time in Mins" + currentHourMins);
+    console.log("Next Departure " + nextDepart);
+    console.log("Frequency " + frequencyMins);
+    console.log(lastDeparture);
 
     i++;
 });
